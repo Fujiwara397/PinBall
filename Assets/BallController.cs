@@ -30,12 +30,21 @@ public class BallController : MonoBehaviour {
 		if (tag == "SmallStarTag") {
 			// スコアを加算
 			this.score += 10;
-			} else if (tag == "LargeStarTag") {
+			} 
+
+		if (tag == "LargeStarTag") {
 			// スコアを加算
 			this.score += 20;
-			}else if(tag == "SmallCloudTag" || tag == "LargeCloudTag") {
-			// スコアを加算(追加)
-			this.score += 5;
+		}
+
+		if (tag == "SmallCloudTag") {
+			// スコアを加算
+			this.score += 15;
+		}
+
+		if(tag == "LargeCloudTag" ){
+			 // スコアを加算(追加)
+			this.score += 25;
 			
 		}
 
@@ -58,17 +67,26 @@ public class BallController : MonoBehaviour {
 		if (other.gameObject.tag == "SmallStarTag") {
 			// スコアを加算
 			this.score += 10;
-		} else if (other.gameObject.tag == "LargeStarTag") {
+		} 
+		if (other.gameObject.tag == "LargeStarTag") {
 			// スコアを加算
 			this.score += 20;
-		} else if (other.gameObject.tag == "SmallCloudTag" || tag == "LargeCloudTag") {
-			// スコアを加算
-			this.score += 5;
 		}
+		if(other.gameObject.tag == "SmallCloudTag" ){
+			// スコアを加算
+			this.score += 15;
+
+		}
+		if(other.gameObject.tag == "LargeCloudTag" ){
+			// スコアを加算(追加)
+			this.score += 25;
+
+		}
+
+	
 
 			//ScoreText獲得した点数を表示
 			this.scoreText.GetComponent<Text> ().text = "Score " + this.score + "pt";
 
-
+          }
 	}
-}
